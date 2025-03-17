@@ -55,9 +55,7 @@ app.use("/api/v1/user", userRoutes);
 app.use(errorHandler);
 
 app.get("/", (_, res) => {
-  res.status(200);
-  console.log("🚀 ~ app.get ~ Backend is running fine here:");
-  res.send(`Backend is running fine here ............`);
+  res.status(200).send("Backend is running fine here.");
 });
 axios.defaults.timeout = 20000;
 const port = PORT || 5000;
