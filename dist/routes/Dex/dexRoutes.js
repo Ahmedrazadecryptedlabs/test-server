@@ -1,24 +1,35 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const authMiddleware_1 = require("../../middlewares/authMiddleware");
-const dexController_1 = require("../../controllers/Dex/dexController");
-const router = express_1.default.Router();
-router.get("/tokens", authMiddleware_1.protect, dexController_1.getTokenList);
-router.get("/token/price/:tokenAddress", authMiddleware_1.protect, dexController_1.getTokenPrice);
-router.get("/pools", authMiddleware_1.protect, dexController_1.getPools);
-router.get("/quotation", authMiddleware_1.protect, dexController_1.getQuotation);
-router.get("/positions", authMiddleware_1.protect, dexController_1.getAllPositions);
-router.post("/swap", authMiddleware_1.protect, dexController_1.executeSwap);
-router.post("/create-position", authMiddleware_1.protect, dexController_1.createPosition);
-router.post("/increase-liquidity", authMiddleware_1.protect, dexController_1.increaseLiquidity);
-router.post("/decrease-liquidity", authMiddleware_1.protect, dexController_1.decreaseLiquidity);
-router.post("/close-position", authMiddleware_1.protect, dexController_1.closePosition);
-router.post("/claim-liquidity-rewards", authMiddleware_1.protect, dexController_1.claimLiquidityRewards);
-router.post("/stake-raydium", authMiddleware_1.protect, dexController_1.stakeRaydium);
-router.post("/unstake-raydium", authMiddleware_1.protect, dexController_1.unstakeRaydium);
-router.post("/claim-stake-raydium-rewards", authMiddleware_1.protect, dexController_1.claimStakedRaydiumReward);
-exports.default = router;
+// import express from "express";
+// import { protect } from "../../middlewares/authMiddleware";
+// import {
+//   claimLiquidityRewards,
+//   claimStakedRaydiumReward,
+//   closePosition,
+//   createPosition,
+//   decreaseLiquidity,
+//   executeSwap,
+//   getAllPositions,
+//   getPools,
+//   getQuotation,
+//   getTokenList,
+//   getTokenPrice,
+//   increaseLiquidity,
+//   stakeRaydium,
+//   unstakeRaydium,
+// } from "../../controllers/Dex/dexController";
+// const router = express.Router();
+// router.get("/tokens", protect, getTokenList);
+// router.get("/token/price/:tokenAddress", protect, getTokenPrice);
+// router.get("/pools", protect, getPools);
+// router.get("/quotation", protect, getQuotation);
+// router.get("/positions", protect, getAllPositions);
+// router.post("/swap", protect, executeSwap);
+// router.post("/create-position", protect, createPosition);
+// router.post("/increase-liquidity", protect, increaseLiquidity);
+// router.post("/decrease-liquidity", protect, decreaseLiquidity);
+// router.post("/close-position", protect, closePosition);
+// router.post("/claim-liquidity-rewards", protect, claimLiquidityRewards);
+// router.post("/stake-raydium", protect, stakeRaydium);
+// router.post("/unstake-raydium", protect, unstakeRaydium);
+// router.post("/claim-stake-raydium-rewards", protect, claimStakedRaydiumReward);
+// export default router;

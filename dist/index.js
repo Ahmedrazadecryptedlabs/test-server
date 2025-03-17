@@ -12,7 +12,7 @@ const morgan_1 = __importDefault(require("morgan"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const authRoutes_1 = __importDefault(require("./routes/Authentication/authRoutes"));
 const walletRoutes_1 = __importDefault(require("./routes/Wallet/walletRoutes"));
-const dexRoutes_1 = __importDefault(require("./routes/Dex/dexRoutes"));
+// import dexRoutes from "./routes/Dex/dexRoutes";
 const userRoutes_1 = __importDefault(require("./routes/User/userRoutes"));
 const db_1 = __importDefault(require("./config/db"));
 const errorHandler_1 = __importDefault(require("./middlewares/errorHandler"));
@@ -47,14 +47,12 @@ app.use((0, cookie_parser_1.default)());
 // Routes
 app.use("/api/v1/auth", authRoutes_1.default);
 app.use("/api/v1/wallet", walletRoutes_1.default);
-app.use("/api/v1/dex", dexRoutes_1.default);
+// app.use("/api/v1/dex", dexRoutes);
 app.use("/api/v1/user", userRoutes_1.default);
 // Global Error Handling Middleware
 app.use(errorHandler_1.default);
 app.get("/", (_, res) => {
-    res.status(200);
-    console.log("🚀 ~ app.get ~ Backend is running fine here:");
-    res.send(`Backend is running fine here ............`);
+    res.status(200).send("Backend is running fine here.");
 });
 axios_1.default.defaults.timeout = 20000;
 const port = constants_1.PORT || 5000;
