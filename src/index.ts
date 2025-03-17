@@ -10,7 +10,7 @@ import walletRoutes from "./routes/Wallet/walletRoutes";
 import userRoutes from "./routes/User/userRoutes";
 import connectDB from "./config/db";
 import errorHandler from "./middlewares/errorHandler";
-import { PORT } from "./constants";
+import { PORT } from "./constants"; 
 import axios from "axios";
 
 
